@@ -1,0 +1,11 @@
+﻿@model InventoryManagementMvc.Models.Item
+@{
+	var isLoggedIn=true;
+}
+@if(isLoggedIn)
+{
+	<p>Welcome Back!</p>
+}
+else{
+	<p>Please log in.</p>
+}
