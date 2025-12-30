@@ -18,8 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,14 +32,10 @@
               "RelativeDocumentMoniker": "InventoryManagementMvc\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Brayan Jimenez\\Desktop\\AprendiendoC#\\InventoryManagementMvc\\InventoryManagementMvc\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "InventoryManagementMvc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAB0AAAB1AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwB0AAAB1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-30T07:34:18.202Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
             },
             {
               "$type": "Document",

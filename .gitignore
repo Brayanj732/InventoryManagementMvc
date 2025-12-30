@@ -13,9 +13,6 @@ obj/
 logs/
 *.log
 
-# IIS
-.vscode/
-
 # Secrets
 appsettings.Development.json
 appsettings.Local.json
