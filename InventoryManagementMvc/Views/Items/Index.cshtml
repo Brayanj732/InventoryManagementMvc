@@ -1,40 +1,110 @@
 ﻿@model List<InventoryManagementMvc.Models.Item>
 @{
-	ViewData["Title"]="Index";
+    ViewData["Title"] = "Items Inventory";
 }
-<h3>Index </h3>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Serial Number</th>
-			<th>Category</th>
-			<th>Clients</th>
-		</tr>
-	</thead>
-	<tbody>
-			@foreach(var item in Model)
-			{
-				<tr>
-					<td>@item.Name</td>
-					<td>@item.Price.ToString("N2") $</td>
-					<td>@item.SerialNumber?.Name</td>
-					<td>@item.Category?.Name</td>
-					<td>
-						@foreach(var client in item.ItemClients)
-						{
-							@client.Client.Name
-						}
-					</td>
+<div class="container-main container">
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <h1>
+            <i class="fas fa-shopping-bag"></i> Items Inventory
+        </h1>
+        <a asp-action="Create" class="btn btn-add text-white">
+            <i class="fas fa-plus-circle"></i> Add New Item
+        </a>
+    </div>
 
-					<td>
-						<a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-						<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-					</td>
-				</tr>
-			}
-	</tbody>
-
-</table>
+    <!-- TABLE -->
+    @if (Model != null && Model.Count > 0)
+    {
+        <div class="table-container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-tag"></i> Name</th>
+                        <th><i class="fas fa-dollar-sign"></i> Price</th>
+                        <th><i class="fas fa-barcode"></i> Serial</th>
+                        <th><i class="fas fa-folder"></i> Category</th>
+                        <th><i class="fas fa-users"></i> Clients</th>
+                        <th><i class="fas fa-cog"></i> Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <strong>@item.Name</strong>
+                            </td>
+                            <td>
+                                <span class="price">$@item.Price.ToString("F2")</span>
+                            </td>
+                            <td>
+                                @if (item.SerialNumber != null)
+                                {
+                                    <span class="badge-serial">
+                                        <i class="fas fa-barcode"></i> @item.SerialNumber.Name
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.Category != null)
+                                {
+                                    <span class="badge-category">
+                                        <i class="fas fa-tag"></i> @item.Category.Name
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.ItemClients?.Count > 0)
+                                {
+                                    <div class="clients-list">
+                                        @foreach (var ic in item.ItemClients)
+                                        {
+                                            <span class="client-item">
+                                                <i class="fas fa-user"></i> @ic.Client?.Name
+                                            </span>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">No clients</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-action btn-edit">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-action btn-delete">
+                                    <i class="fas fa-trash"></i> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="table-container">
+            <div class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <h3>No Items Found</h3>
+                <p>Start by creating your first item.</p>
+                <a asp-action="Create" class="btn btn-add text-white mt-3">
+                    <i class="fas fa-plus-circle"></i> Create First Item
+                </a>
+            </div>
+        </div>
+    }
+</div>

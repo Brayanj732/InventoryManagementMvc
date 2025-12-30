@@ -1,8 +1,176 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home - Items Manager";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-icon">
+            <i class="fas fa-box"></i>
+        </div>
+        <h1>Items Manager</h1>
+        <p>
+            Proyecto educativo: Sistema de gestión de inventario.
+            <br>
+            Aprende ASP.NET Core, Entity Framework y diseño responsive en la práctica.
+        </p>
+        <div style="margin-top: 2.5rem;">
+            <a asp-controller="Items" asp-action="Index" class="cta-button">
+                <i class="fas fa-arrow-right"></i>
+                Ver el Proyecto
+            </a>
+            <a href="#features" class="cta-button cta-button-outline">
+                <i class="fas fa-chevron-down"></i>
+                Más Información
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="features" id="features">
+    <div class="features-container">
+        <h2 class="section-title"> Conceptos Implementados</h2>
+        <p class="section-subtitle">
+            Lo que aprendí y practiqué en este proyecto
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon blue">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <h3>CRUD Completo y MVC</h3>
+                <p>Uso de MVC para ASP NET CORE. Implementación de Create, Read, Update y Delete. Operaciones fundamentales en cualquier aplicación web.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon green">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h3>Relaciones 1:N</h3>
+                <p>Relación uno a muchos entre categorías e items usando Entity Framework Core y Foreign Keys.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon orange">
+                    <i class="fas fa-barcode"></i>
+                </div>
+                <h3>Relaciones 1:1</h3>
+                <p>Implementación de relaciones uno a uno entre items y números de serie con configuración en OnModelCreating.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon purple">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Relaciones N:N</h3>
+                <p>Relaciones muchos a muchos con tabla intermedia (ItemClient), clave primaria compuesta y navegación bidireccional.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon blue">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Diseño Responsivo</h3>
+                <p>CSS avanzado con gradientes, animaciones, Bootstrap 5, Grid y Flexbox. Funciona en desktop, tablet y móvil.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon green">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Buenas Prácticas</h3>
+                <p>Separación de responsabilidades, CSS en archivos separados, vistas limpias, código organizado y bien documentado.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS SECTION -->
+<section class="stats">
+    <div class="stats-container">
+        <h2 class="stats-title"> Tecnologías y Técnicas Usadas</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon-box">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Arquitectura Limpia</h3>
+                <p>Separación entre Controllers, Models, Views y Data layer. Código mantenible y escalable.</p>
+            </div>
+
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon-box">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Base de Datos Relacional</h3>
+                <p>SQL Server con migraciones automáticas, integridad referencial y seeding de datos con Entity Framework.</p>
+            </div>
+
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon-box">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Interfaz Moderna</h3>
+                <p>Gradientes, animaciones suaves, transiciones profesionales, CSS Grid, Flexbox e Intersection Observer.</p>
+            </div>
+
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon-box">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>LINQ y Queries</h3>
+                <p>Consultas de base de datos con Include, ThenInclude y operadores LINQ para carga de datos relacionados.</p>
+            </div>
+
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon-box">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Validación de Datos</h3>
+                <p>Validación en modelos, formularios seguros con ModelBinding, Bind attribute y Data Annotations.</p>
+            </div>
+
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon-box">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Operaciones Asincrónicas</h3>
+                <p>Uso de async/await, Task, ToListAsync y FirstOrDefaultAsync para mejor rendimiento y responsividad.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL SECTION -->
+<section class="cta-section">
+    <div class="cta-container">
+        <h2>¿Listo para explorar?</h2>
+        <p>Descubre cómo se construye un sistema de gestión de inventario profesional con ASP.NET Core</p>
+        <a asp-controller="Items" asp-action="Index" class="cta-button cta-button-blue">
+            <i class="fas fa-rocket"></i>
+            Ver el Sistema en Acción
+        </a>
+    </div>
+</section>
+
+<script>
+    // Scroll animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>

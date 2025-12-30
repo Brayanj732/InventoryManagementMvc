@@ -45,7 +45,7 @@ namespace InventoryManagementMvc.Controllers
             return View(item);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id", "Name", "Price","CategoryId")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Price,CategoryId")] Item item)
         {
             if (ModelState.IsValid) {
                 _context.Update(item);
