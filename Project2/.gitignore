@@ -1,0 +1,21 @@
+# Build
+bin/
+obj/
+
+# User-specific
+*.user
+*.suo
+
+# VS Cache
+.vs/
+
+# Logs
+logs/
+*.log
+
+# IIS
+.vscode/
+
+# Secrets
+appsettings.Development.json
+appsettings.Local.json
