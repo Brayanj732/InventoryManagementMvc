@@ -93,22 +93,6 @@ namespace InventoryManagementMvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //public async Task<IActionResult> Create([Bind("Id,Name,Price,CategoryId")] Item item)
-        //{
-        //    if (ModelState.IsValid) {
-        //        _context.Items.Add(item);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(item);
-        //}
-        //public async Task<IActionResult> Edit(int id)
-        //{
-        //    ViewData["Categories"] = new SelectList(_context.Categories, "Id", "Name");
-        //    var item = await _context.Items.FirstOrDefaultAsync(x=>x.Id==id);
-        //    if (item == null) return NotFound();
-        //    return View(item);
-        //}
         public async Task<IActionResult> Edit(int id)
         {
             var item = await _context.Items
@@ -136,18 +120,6 @@ namespace InventoryManagementMvc.Controllers
             return View(vm);
         }
 
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Price,CategoryId")] Item item)
-        //{
-        //    if (ModelState.IsValid) {
-        //        _context.Update(item);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(item);
-        //}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(EditItemViewModel vm)
@@ -166,12 +138,12 @@ namespace InventoryManagementMvc.Controllers
 
             if (item == null) return NotFound();
 
-            // 🔹 Item
+            //  Item
             item.Name = vm.Name;
             item.Price = vm.Price;
             item.CategoryId = vm.CategoryId;
 
-            // 🔹 Serial
+            //  Serial
             if (!string.IsNullOrWhiteSpace(vm.SerialNumber))
             {
                 if (item.SerialNumber == null)
@@ -191,7 +163,7 @@ namespace InventoryManagementMvc.Controllers
                 _context.SerialNumbers.Remove(item.SerialNumber);
             }
 
-            // 🔹 Clients (N:N con input)
+            //  Clients (N:N con input)
             _context.ItemClients.RemoveRange(item.ItemClients);
 
             if (!string.IsNullOrWhiteSpace(vm.Clients))
