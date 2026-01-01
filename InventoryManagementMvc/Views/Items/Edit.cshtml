@@ -1,4 +1,4 @@
-﻿@model InventoryManagementMvc.Models.Item
+﻿@model InventoryManagementMvc.ViewModels.EditItemViewModel
 @{
     ViewData["Title"] = "Edit Item";
 }
@@ -35,6 +35,30 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                <label asp-for="SerialNumber" class="form-label">
+                    <i class="fas fa-barcode"></i> Serial Number
+                </label>
+                <input asp-for="SerialNumber"
+                       class="form-control"
+                       placeholder="Optional (e.g. SN-00123)" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Clients" class="form-label">
+                    <i class="fas fa-users"></i> Clients
+                </label>
+
+                <input asp-for="Clients"
+                       class="form-control"
+                       placeholder="Ej: Brayan, David, Carlos" />
+
+                <small class="text-muted">
+                    Separate client names with commas
+                </small>
+            </div>
+
+
             <div class="d-flex gap-2 mt-4">
                 <button type="submit" class="btn btn-add text-white flex-grow-1">
                     <i class="fas fa-save"></i> Update Item
@@ -43,6 +67,7 @@
                     <i class="fas fa-times"></i> Cancel
                 </a>
             </div>
+            @Html.AntiForgeryToken()
         </form>
     </div>
 </div>

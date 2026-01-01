@@ -1,4 +1,4 @@
-﻿@model InventoryManagementMvc.Models.Item
+﻿@model InventoryManagementMvc.ViewModels.CreateItemViewModel
 @{
     ViewData["Title"] = "Create Item";
 }
@@ -34,7 +34,24 @@
                     <option value="">-- Select a category --</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label asp-for="SerialNumber" class="form-label">
+                    <i class="fas fa-barcode"></i> Serial Number
+                </label>
+                <input asp-for="SerialNumber"
+                       class="form-control"
+                       placeholder="Optional (e.g. SN-00123)" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientName" class="form-label">
+                    <i class="fas fa-users"></i> Client
+                </label>
 
+                <input asp-for="ClientName" class="form-control"
+                       placeholder="Optional (e.g., Brayan)" />
+
+                <span asp-validation-for="ClientName" class="text-danger"></span>
+            </div>
             <div class="d-flex gap-2 mt-4">
                 <button type="submit" class="btn btn-add text-white flex-grow-1">
                     <i class="fas fa-save"></i> Create Item
@@ -43,6 +60,7 @@
                     <i class="fas fa-times"></i> Cancel
                 </a>
             </div>
+            @Html.AntiForgeryToken()
         </form>
     </div>
 </div>

@@ -13,6 +13,11 @@ namespace InventoryManagementMvc.Data
                 ic.ClientId
             }
             );
+            modelBuilder.Entity<Item>()
+                .HasOne(i => i.SerialNumber)
+                .WithOne(s => s.Item)
+                .HasForeignKey<SerialNumber>(s => s.ItemId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<ItemClient>().HasOne(i => i.Item).WithMany(ic => ic.ItemClients).HasForeignKey(i => i.ItemId);
             modelBuilder.Entity<ItemClient>().HasOne(c => c.Client).WithMany(ic => ic.ItemClients).HasForeignKey(c => c.ClientId);
