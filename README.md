@@ -200,7 +200,7 @@ Pagina index con scroll indicando Conceptos Implementados, Tecnologías/ Técnic
 En la primera parte de la vista index se puede observar el boton "Ver el proyecto" que redirige al proyecto para mostrar la vista de todos los items.
 Ademas se puede observar el boton mas informacion que hace scroll hacia la segunda parte de la vista index.
 
-![Primera parte de la vista index](InventoryManagementMvc\screenshots\01-index.png)
+![Primera parte de la vista index](InventoryManagementMvc/screenshots/01-index.png)
 
 #### Segunda parte de la vista index
 Segunda parte de la vista index donde se puede observar los conceptos implementados en este proyecto
