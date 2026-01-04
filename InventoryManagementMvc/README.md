@@ -1,156 +1,125 @@
-﻿# Items Manager
+﻿# Inventory Management System
 
-Sistema de gestión de inventario desarrollado como proyecto de practica.
+Sistema web de gestión de inventario desarrollado con **ASP.NET Core MVC**, enfocado en la práctica de **desarrollo backend**, modelado de datos relacionales y aplicación de buenas prácticas de arquitectura.
 
----
-
-##  Acerca del Proyecto
-
-Items Manager es una aplicación web que demuestra conceptos fundamentales de desarrollo de software moderno. Implementa un sistema completo de gestión de inventario con operaciones CRUD, relaciones complejas en base de datos, validaciones y una interfaz responsive y profesional.
-
-Este proyecto fue desarrollado para mostrar mis skills y dominio acerca de ASP NET CORE MVC.
+![.NET](https://img.shields.io/badge/.NET-7.0-512BD4?logo=dotnet)
+![C#](https://img.shields.io/badge/C%23-239120?logo=csharp)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap)
 
 ---
 
-## Características Principales
+##  Video Demo Completo
+
+[![Ver demo completa en YouTube](https://img.youtube.com/vi/QWtmuNkuc6g/maxresdefault.jpg)](https://youtu.be/QWtmuNkuc6g)
+
+**👉 [Ver demo completa en YouTube (1:11 min)](https://youtu.be/QWtmuNkuc6g)**
+
+---
+
+##  Vista Rápida
+
+### Pagina de Index con informacion sobre el proyecto y botones para dirigir al proyecto.
+![Index](assets/gifs/index-demo.gif)
+
+### Edicion de items.
+![Index](assets/gifs/edit-inventory-demo.gif)
+
+### Elinacion de items.
+![Index](assets/gifs/delete-inventory-demo.gif)
+
+### Creacion de items.
+![Index](assets/gifs/createitem-inventory-demo.gif)
+
+---
+
+##  Características
+
+-  **CRUD completo de Items**
+-  Gestión de **Categorías**
+-  Asignación de **Serial Numbers**
+-  Asociación de **Clientes** a productos
+-  Modelado de datos con relaciones:
+  - **Uno a Uno (1:1)** → Item ↔ SerialNumber
+  - **Uno a Muchos (1:N)** → Category ↔ Items
+  - **Muchos a Muchos (N:N)** → Items ↔ Clients
+-  Uso de **ViewModels** para separación de responsabilidades
+-  Operaciones **asíncronas** (`async / await`)
+-  Consultas con **LINQ**, `Include` y `ThenInclude`
+-  Interfaz **responsive** con Bootstrap y CSS personalizado
+-  Validaciones de datos y protección CSRF
+-  Control de versiones con **Git y GitHub**
+
+---
+
+##  Tecnologías Utilizadas
 
 ### Backend
-- **Patrón MVC** - Separación clara entre Model, View y Controller
-- **CRUD Completo** - Create, Read, Update y Delete operations
-- **Relaciones de Base de Datos**
-  - 1:1 (Items ↔ SerialNumber)
-  - 1:N (Category → Items)
-  - N:N (Items ↔ Clients con tabla intermedia)
-- **Entity Framework Core** - ORM con migraciones automáticas
-- **Async/Await** - Operaciones asincrónicas con Task
-- **Validaciones** - Data Annotations y validación en formularios
-- **Seeding de Datos** - Datos iniciales con OnModelCreating
+- ASP.NET Core MVC
+- C#
+- Entity Framework Core
+- LINQ
+- SQL Server
 
 ### Frontend
-- **Diseño Responsivo** - Mobile-first, funciona en todos los dispositivos
-- **CSS Avanzado** - Gradientes, animaciones, Flexbox, Grid
-- **Interfaz Moderna** - Glassmorphism, transiciones suaves
-- **Animaciones** - Scroll-triggered con Intersection Observer
-- **Bootstrap 5** - Framework CSS para componentes
-- **Font Awesome** - Iconografía profesional
-
----
-
-## Stack Tecnológico
-
-| Capa | Tecnología | Versión |
-|------|------------|---------|
-| **Backend** | ASP.NET Core | 8.0 |
-| **Lenguaje** | C# | 12.0 |
-| **ORM** | Entity Framework Core | 8.0 |
-| **Base de Datos** | SQL Server | 2019+ |
-| **Frontend** | HTML5 + CSS3 | Latest |
-| **Framework CSS** | Bootstrap | 5.3 |
-| **JavaScript** | Vanilla JS | ES6+ |
-| **Iconos** | Font Awesome | 6.4.0 |
-
----
-
-##  Conceptos Implementados
-
-### Patrones y Arquitectura
-- [x] Patrón MVC (Model-View-Controller)
-- [x] SOLID Principles (Single Responsibility)
-- [x] Separación de responsabilidades
-- [x] Repository pattern (a través de DbContext)
-
-### Base de Datos
-- [x] Relaciones 1:1 (Items - SerialNumber)
-- [x] Relaciones 1:N (Category - Items)
-- [x] Relaciones N:N (Items - Clients con tabla intermedia)
-- [x] Foreign Keys y cascading deletes
-- [x] Migraciones con Entity Framework
-- [x] Seeding de datos automático
-
-### C# y LINQ
-- [x] Async/Await y Task
-- [x] LINQ queries (Select, Where, Include)
-- [x] LINQ to Entities
-- [x] String interpolation
-- [x] Null-coalescing operators
-
-### ASP.NET Core
-- [x] Routing conventions
-- [x] Dependency Injection
-- [x] ModelBinding y Data Annotations
-- [x] ActionResults (View, RedirectToAction)
-- [x] ViewData y ViewBag
-- [x] Tag Helpers (asp-for, asp-items, etc.)
-
-### Frontend
-- [x] CSS Variables
-- [x] CSS Gradients (linear, 135deg)
-- [x] Flexbox Layout
-- [x] CSS Grid
-- [x] Media Queries (responsive)
-- [x] CSS Animations (@keyframes)
-- [x] CSS Transitions
-- [x] Glassmorphism (backdrop-filter)
-
-### JavaScript
-- [x] Intersection Observer API
-- [x] DOM Manipulation (querySelector, classList)
-- [x] Event Handling
-- [x] ES6+ Features (arrow functions, const/let)
+- HTML5 / CSS3
+- Bootstrap 5
+- Font Awesome
 
 ---
 
 ##  Instalación
 
-### Requisitos Previos
-- **.NET 8.0 SDK** - [Descargar](https://dotnet.microsoft.com/download)
-- **SQL Server** - [Descargar](https://www.microsoft.com/sql-server/sql-server-downloads)
-- **Visual Studio Code o Visual Studio** (opcional)
-- **Git** - [Descargar](https://git-scm.com/)
+### Prerrequisitos
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download)
+- SQL Server Express o LocalDB
+- Visual Studio 2022 (recomendado)
 
 ### Pasos
 
-1. **Clonar el repositorio**
+**Clona el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/Items-Manager.git
-cd Items-Manager
+git clone https://github.com/Brayanj732/InventoryManagementMvc.git
+cd InventoryManagementMvc
+# Configuración del Proyecto
+
+## Configura la base de datos
+
+Si ya tienes tu `appsettings.json`, asegúrate de tener una cadena de conexión similar a esta:
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=InventoryManagementDB;Trusted_Connection=True;"
+  }
+}
 ```
 
-2. **Restaurar dependencias**
+## Restaura paquetes NuGet
 ```bash
 dotnet restore
 ```
 
-3. **Configurar base de datos** (en `appsettings.json`)
-```json
-"ConnectionStrings": {
-  "DefaultConnection": "Server=.;Database=ItemsManagerDB;Trusted_Connection=true;"
-}
-```
-
-4. **Aplicar migraciones**
+## Aplica las migraciones
 ```bash
 dotnet ef database update
 ```
 
-5. **Ejecutar la aplicación**
+## Ejecuta la aplicación
 ```bash
 dotnet run
 ```
 
-6. **Acceder a la aplicación**
+## Abre en el navegador
 ```
-http://localhost:5000/
+https://localhost:xxxx
 ```
 
 ---
 
 ##  Estructura del Proyecto
-
 ```
-Items-Manager/
+InventoryManagementMvc/
 ├── Controllers/
-│   ├── HomeController.cs
 │   └── ItemsController.cs
 ├── Models/
 │   ├── Item.cs
@@ -158,221 +127,126 @@ Items-Manager/
 │   ├── SerialNumber.cs
 │   ├── Client.cs
 │   └── ItemClient.cs
-├── Data/
-│   ├── MyAppContext.cs
-│   └── Migrations/
+├── ViewModels/
+│   ├── CreateItemViewModel.cs
+│   └── EditItemViewModel.cs
 ├── Views/
-│   ├── Shared/
-│   │   └── _Layout.cshtml
-│   ├── Home/
-│   │   ├── Index.cshtml (Landing Page)
-│   │   └── Privacy.cshtml
-│   └── Items/
-│       ├── Index.cshtml
-│       ├── Create.cshtml
-│       ├── Edit.cshtml
-│       └── Delete.cshtml
+│   ├── Items/
+│   │   ├── Index.cshtml
+│   │   ├── Create.cshtml
+│   │   ├── Edit.cshtml
+│   │   └── Delete.cshtml
+│   └── Shared/
+│       └── _Layout.cshtml
+├── Data/
+│   └── MyAppContext.cs
 ├── wwwroot/
 │   ├── css/
-│   │   ├── site.css
-│   │   └── home-landing.css
-│   ├── js/
-│   │   └── site.js
-│   └── lib/
-│       ├── bootstrap/
-│       └── jquery/
-├── appsettings.json
-└── Program.cs
+│   └── js/
+└── Migrations/
 ```
 
 ---
 
-##  Uso
+##  Modelo de Base de Datos
 
-### Landing Page
-Accede a `http://localhost:5000/` para ver la landing page educativa del proyecto con:
-- Resumen de conceptos aprendidos
-- Stack tecnológico utilizado
-- Call-to-action al sistema de inventario
+### Item
+- Id (int, PK)
+- Name (string)
+- Price (double)
+- CategoryId (int, FK)
+- SerialNumber (1:1)
+- ItemClients (N:N)
 
-### Sistema de Gestión de Inventario
-Accede a `http://localhost:5000/Items` para:
-- **Ver Items** - Tabla con todos los productos
-- **Crear Item** - Formulario para agregar nuevo item
-- **Editar Item** - Actualizar datos del producto
-- **Eliminar Item** - Remover un item del inventario
+### Category
+- Id (int, PK)
+- Name (string)
 
-### Características
-- Cada item puede tener:
-  - Nombre y precio
-  - Categoría (relación 1:N)
-  - Número de serie único (relación 1:1)
-  - Múltiples clientes asociados (relación N:N)
+### SerialNumber
+- Id (int, PK)
+- Name (string)
+- ItemId (int, FK)
 
----
+### Client
+- Id (int, PK)
+- Name (string)
 
-##  Relaciones de Base de Datos
-
-```
-┌─────────────┐
-│  Category   │
-└──────┬──────┘
-       │ 1:N
-       │
-       ▼
-┌─────────────┐         ┌───────────────┐
-│    Item     │◄───────►│ SerialNumber  │ (1:1)
-└──────┬──────┘         └───────────────┘
-       │
-       │ N:N (con tabla intermedia)
-       │
-       ▼
-┌─────────────────┐
-│  ItemClient     │
-└────┬────────┬───┘
-     │        │
-     ▼        ▼
-┌────────┐ ┌────────┐
-│ Client │ │  Item  │
-└────────┘ └────────┘
-```
+### ItemClient
+- ItemId (PK, FK)
+- ClientId (PK, FK)
 
 ---
 
-##  Estilos y Diseño
+##  Seguridad y Validaciones
 
-### Paleta de Colores
-- **Primario:** `#2563eb` (Azul)
-- **Secundario:** `#10b981` (Verde)
-- **Peligro:** `#ef4444` (Rojo)
-- **Warning:** `#f59e0b` (Naranja)
-- **Dark:** `#1f2937` (Gris oscuro)
-
-### Tipografía
-- **Font:** Segoe UI, Tahoma, Geneva, sans-serif
-- **Headings:** 700 weight
-- **Body:** 400-500 weight
-
-### Animaciones
-- Hero icon bounce: 2s infinite
-- Feature cards fade-in: 0.6s ease-out
-- Button hover: 0.3s ease with translateY
-- Smooth scroll behavior
+- Protección contra CSRF con AntiForgeryToken
+- Validaciones en cliente y servidor
+- Integridad referencial garantizada con EF Core
+- Prevención de SQL Injection mediante ORM
 
 ---
 
-##  Testing
+##  Capturas de Pantalla
 
-### Pruebas Manuales Recomendadas
+### Página Principal
 
-1. **CRUD Operations**
-   - [ ] Crear un nuevo item
-   - [ ] Editar un item existente
-   - [ ] Ver lista de items
-   - [ ] Eliminar un item
+#### Primera parte de la vista index
+Pagina index con scroll indicando Conceptos Implementados, Tecnologías/ Técnicas Usadas y botones para ir a ver el proyecto de inventario en accion.
+En la primera parte de la vista index se puede observar el boton "Ver el proyecto" que redirige al proyecto para mostrar la vista de todos los items.
+Ademas se puede observar el boton mas informacion que hace scroll hacia la segunda parte de la vista index.
 
-2. **Relaciones**
-   - [ ] Asignar categoría a un item
-   - [ ] Verificar que se muestre la categoría
-   - [ ] Crear múltiples items con misma categoría
-   - [ ] Asociar múltiples clientes a un item
+![Primera parte de la vista index](screenshots\01-index.png")
 
-3. **Responsive**
-   - [ ] Probar en desktop (1920x1080)
-   - [ ] Probar en tablet (768x1024)
-   - [ ] Probar en móvil (375x667)
+#### Segunda parte de la vista index
+Segunda parte de la vista index donde se puede observar los conceptos implementados en este proyecto
 
-4. **Animaciones**
-   - [ ] Verificar fade-in de tarjetas en scroll
-   - [ ] Probar hover effects en botones
-   - [ ] Verificar smooth scroll
+![Segunda parte de la vista index](screenshots/01-index2.png)
+
+#### Tercera parte de la vista index
+Tercera parte de la vista index donde se aprecia las tecnologias y tecnicas usadas en este proyecto
+
+![Tercera parte de la vista index](screenshots/01-index3.png)
 
 ---
 
-##  Recursos de Aprendizaje
+### Vista de Items
 
-### Conceptos Claves
-- [ASP.NET Core Documentation](https://docs.microsoft.com/aspnet/core)
-- [Entity Framework Core](https://docs.microsoft.com/ef/core/)
-- [C# Language](https://docs.microsoft.com/dotnet/csharp/)
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [Bootstrap Documentation](https://getbootstrap.com/docs/)
+#### Vista general de todos los items en la base de datos en tiempo real
+En esta vista se aprecian todos los items disponibles, se pueden editar, eliminar y crear.
+
+![Vista general de todos los items en la base de datos en tiempo real](screenshots/02-items.png)
+
+#### Vista de Editar Item
+Vista para editar el item, se puede editar el nombre,precio,categoria,serial number y cliente desde el formulario.
+
+![Detalle del chiste - parte superior](screenshots/03-edit-form.png)
+
+#### Vista de Eliminar Item
+Vista para eliminar el item con previsualizacion del item que se va a eliminar.
+
+![Detalle del chiste con estadísticas](screenshots/04-delete.png)
+
+---
+
+### Crear Nuevo Chiste
+
+Formulario intuitivo para crear un item dandole nombre,precio,categoria,serial number y cliente.
+
+![Formulario de creación](screenshots/05-create.png)
+
+---
+
+
+## Autor
+
+- GitHub: [@Brayanj732](https://github.com/Brayanj732)
+- LinkedIn: [Brayan Jimenez](https://www.linkedin.com/in/brayanjimenezdev)
+- Email: brayanjimenezdev@outlook.com
 
 
 ---
 
-## Contribuciones
+## Licencia
 
-Este es un proyecto educativo. Las contribuciones no son esperadas, pero cualquier feedback es bienvenido.
-
----
-
-##  Licencia
-
-Este proyecto está bajo licencia MIT. Ver archivo `LICENSE` para más detalles.
-
----
-
-##  Autor
-
-**[Brayan Jimenez]**
-- 📧 Email: [brayanjimenezdev@outlook.com]
-- 💼 LinkedIn: [https://www.linkedin.com/in/brayanjimenezdev/]
-- 🐙 GitHub: [@BrayanJ732](https://github.com/Brayanj732)
-
----
-
-## Checklist de Características
-
-### Backend
-- [x] Models definidos
-- [x] DbContext configurado
-- [x] Migraciones implementadas
-- [x] Controllers CRUD
-- [x] Relaciones 1:1
-- [x] Relaciones 1:N
-- [x] Relaciones N:N
-- [x] Validaciones
-- [x] Seeding de datos
-
-### Frontend
-- [x] Landing page
-- [x] Tabla de items
-- [x] Formularios (Create/Edit)
-- [x] Confirmación de delete
-- [x] Responsive design
-- [x] Animaciones
-- [x] Iconos
-- [x] Separación de CSS
-
----
-
-## Lo que Aprendí
-
-Este proyecto me permitió practicar y solidificar conocimientos en:
-
-Arquitectura MVC
-Entity Framework Core avanzado
-Async/Await en C#
-LINQ queries complejas
-CSS avanzado (gradientes, animaciones)
-Responsive design (mobile-first)
-Buenas prácticas de código
-Separación de responsabilidades
-Versionado con Git
-
----
-
-## Screenshots
-
-### Landing Page
-![Landing Page Screenshot]
-
-### Items Index
-![Items Table Screenshot]
-
-### Form Create
-![Create Form Screenshot]
-
-*Nota: Agregar screenshots reales después*
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
