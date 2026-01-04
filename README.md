@@ -20,16 +20,16 @@ Sistema web de gestión de inventario desarrollado con **ASP.NET Core MVC**, enf
 ##  Vista Rápida
 
 ### Pagina de Index con informacion sobre el proyecto y botones para dirigir al proyecto.
-![Index](assets/gifs/index-demo.gif)
+![Index](InventoryManagementMvc/assets/gifs/index-demo.gif)
 
 ### Edicion de items.
-![Index](assets/gifs/edit-inventory-demo.gif)
+![Index](InventoryManagementMvc/assets/gifs/edit-inventory-demo.gif)
 
 ### Elinacion de items.
-![Index](assets/gifs/delete-inventory-demo.gif)
+![Index](InventoryManagementMvc/assets/gifs/delete-inventory-demo.gif)
 
 ### Creacion de items.
-![Index](assets/gifs/createitem-inventory-demo.gif)
+![Index](InventoryManagementMvc/assets/gifs/createitem-inventory-demo.gif)
 
 ---
 
@@ -195,17 +195,17 @@ Pagina index con scroll indicando Conceptos Implementados, Tecnologías/ Técnic
 En la primera parte de la vista index se puede observar el boton "Ver el proyecto" que redirige al proyecto para mostrar la vista de todos los items.
 Ademas se puede observar el boton mas informacion que hace scroll hacia la segunda parte de la vista index.
 
-![Primera parte de la vista index](screenshots\01-index.png")
+![Primera parte de la vista index](InventoryManagementMvc/screenshots\01-index.png")
 
 #### Segunda parte de la vista index
 Segunda parte de la vista index donde se puede observar los conceptos implementados en este proyecto
 
-![Segunda parte de la vista index](screenshots/01-index2.png)
+![Segunda parte de la vista index](InventoryManagementMvc/screenshots/01-index2.png)
 
 #### Tercera parte de la vista index
 Tercera parte de la vista index donde se aprecia las tecnologias y tecnicas usadas en este proyecto
 
-![Tercera parte de la vista index](screenshots/01-index3.png)
+![Tercera parte de la vista index](InventoryManagementMvc/screenshots/01-index3.png)
 
 ---
 
@@ -214,17 +214,17 @@ Tercera parte de la vista index donde se aprecia las tecnologias y tecnicas usad
 #### Vista general de todos los items en la base de datos en tiempo real
 En esta vista se aprecian todos los items disponibles, se pueden editar, eliminar y crear.
 
-![Vista general de todos los items en la base de datos en tiempo real](screenshots/02-items.png)
+![Vista general de todos los items en la base de datos en tiempo real](InventoryManagementMvc/screenshots/02-items.png)
 
 #### Vista de Editar Item
 Vista para editar el item, se puede editar el nombre,precio,categoria,serial number y cliente desde el formulario.
 
-![Detalle del chiste - parte superior](screenshots/03-edit-form.png)
+![Detalle del chiste - parte superior](InventoryManagementMvc/screenshots/03-edit-form.png)
 
 #### Vista de Eliminar Item
 Vista para eliminar el item con previsualizacion del item que se va a eliminar.
 
-![Detalle del chiste con estadísticas](screenshots/04-delete.png)
+![Detalle del chiste con estadísticas](InventoryManagementMvc/screenshots/04-delete.png)
 
 ---
 
@@ -232,7 +232,7 @@ Vista para eliminar el item con previsualizacion del item que se va a eliminar.
 
 Formulario intuitivo para crear un item dandole nombre,precio,categoria,serial number y cliente.
 
-![Formulario de creación](screenshots/05-create.png)
+![Formulario de creación](InventoryManagementMvc/screenshots/05-create.png)
 
 ---
 
